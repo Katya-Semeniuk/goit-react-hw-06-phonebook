@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import ContactForm from '../ContactForm/ContactForm';
 import ContactFilter from '../ContactFilter/ContactFilter';
 import ContactsList from '../ContactsList/ContactsList';
+import Notification from '../notification/Notification';
 
 import { Container, MainTitle, Title, Subtitle } from './ContactPage.styled';
 
@@ -17,6 +18,7 @@ const ContactPage = () => {
       <Title>Contacts</Title>
       <ContactFilter />
       <ContactsList />
+      <Notification />
     </Container>
   );
 };

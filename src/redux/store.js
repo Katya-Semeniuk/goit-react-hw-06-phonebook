@@ -11,13 +11,18 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import contactsReducer from '../redux/contactsSlice';
+import notificationsReducer from '../components/notification/redux/notification.slice';
+import NotificationsMiddleware from './notifications.middleware';
 
 const persistConfig = {
   key: 'root',
   storage,
 };
 
-const rootReducer = combineReducers({ contacts: contactsReducer });
+const rootReducer = combineReducers({
+  contacts: contactsReducer,
+  notifications: notificationsReducer,
+});
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
@@ -27,7 +32,7 @@ const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
+    }).concat([NotificationsMiddleware]),
 });
 const persistor = persistStore(store);
 

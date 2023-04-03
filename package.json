@@ -4,6 +4,9 @@
   "private": true,
   "homepage": "https://Katya-Semeniuk.github.io/goit-react-hw-06-phonebook/",
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.15",
     "@redux-devtools/extension": "^3.2.5",
     "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.3",
